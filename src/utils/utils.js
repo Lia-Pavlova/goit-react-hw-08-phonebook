@@ -88,13 +88,13 @@ export const duplicateNameChekingSuccess = (contact, action = {}) => {
 
   switch (action.type) {
     case 'add':
-      isDuplicateName = String(
+      isDuplicateName = Boolean(
         contacts.items.find(({ name }) => name === contact.name),
       )
       if (isDuplicateName) notification.duplicationNameSuccess()
       return isDuplicateName
     case 'edit':
-      isDuplicateName = String(
+      isDuplicateName = Boolean(
         contacts.items
           .filter(({ id }) => id !== contact.id)
           .find(({ name }) => name === contact.name),

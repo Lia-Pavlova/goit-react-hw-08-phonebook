@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { toast } from 'react-toastify'
 import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
@@ -14,7 +14,10 @@ import {
   StyledButton,
   StyledPaper,
 } from './ContactsAddForm.styled'
-import { getLoadingStatus } from '../../redux/contacts/contacts-selectors'
+import {
+  getLoadingStatus,
+  getContacts,
+} from '../../redux/contacts/contacts-selectors'
 import * as contactsOperations from '../../redux/contacts/contacts-operations'
 import {
   contactDataValidationSuccess,
@@ -28,9 +31,16 @@ const ContactsAddForm = ({ modalHide }) => {
   const [name, setName] = useState('')
 
   const [number, setNumber] = useState('')
+  const items = useSelector(getContacts)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (
+      items.find((contact) => contact.name.toLowerCase() === name.toLowerCase())
+    ) {
+      return toast.error(`${name} already exist`)
+    }
 
     const contactToAdd = { number, name }
 
@@ -50,11 +60,24 @@ const ContactsAddForm = ({ modalHide }) => {
     await modalHide()
   }
 
+  //  const submitHandler = (e) => {
+  //   e.preventDefault();
+
+  //   if (
+  //     items.find(
+  //       (contact) =>
+  //         contact.name.toLowerCase() === name.toLowerCase() &&
+  //         contact.id !== contactIsEditing.id
+  //     )
+  //   ) {
+  //     return toast.error(`${name} already exist`);
+  //   }
+
   return (
     <Container>
       <StyledPaper elevation={3} className="paper">
         <h2>Contact information:</h2>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={handleSubmit}>
           <StyledTextField
             required="The name must consist only in letters"
             autoComplete="off"
