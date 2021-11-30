@@ -1,97 +1,83 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-// import MuiPhoneNumber from 'material-ui-phone-number';
-import s from '../ContactsEditForm/CancelBtnStyle.module.css';
+import { useState } from 'react'
+
+import { useSelector, useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
+
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
+
+import s from '../ContactsEditForm/CancelBtnStyle.module.css'
 import {
   Container,
   StyledTextField,
   StyledMuiPhoneNumber,
   StyledButton,
   StyledPaper,
-} from './ContactsAddForm.styled';
-import { getLoadingStatus } from '../../redux/contacts/contacts-selectors';
-import * as contactsOperations from '../../redux/contacts/contacts-operations';
-import { duplicateChekingSuccess } from '../../utils/utils';
+} from './ContactsAddForm.styled'
+import { getLoadingStatus } from '../../redux/contacts/contacts-selectors'
+import * as contactsOperations from '../../redux/contacts/contacts-operations'
+import {
+  contactDataValidationSuccess,
+  duplicateNameChekingSuccess,
+  duplicateNumberChekingSuccess,
+} from '../../utils/utils'
 
 const ContactsAddForm = ({ modalHide }) => {
-  const isLoading = useSelector(getLoadingStatus);
-  const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-  // const formSubmitHandler = value => dispatch(contactsOperations.post(value));
+  const isLoading = useSelector(getLoadingStatus)
+  const dispatch = useDispatch()
+  const [name, setName] = useState('')
+  const [number, setNumber] = useState('')
 
-  const handleChange = e => {
-    if (!e.target) {
-      const value = e;
-      setNumber(value);
-    } else {
-      const { value } = e.target;
-      setName(value);
-    }
-  };
-  // const handleSubmit = e => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-  //   formSubmitHandler({ name, number });
-
-  //   reset();
-  // };
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-
-    const contactToAdd = { name, number };
+    const contactToAdd = { name, number }
 
     // if (!contactDataValidationSuccess(contactToAdd)) {
-    //   return;
+    //   return
     // }
 
-    if (duplicateChekingSuccess(contactToAdd, { type: 'add' })) {
-      return;
+    if (duplicateNameChekingSuccess(contactToAdd, { type: 'add' })) {
+      return
+    }
+    if (duplicateNumberChekingSuccess(contactToAdd, { type: 'add' })) {
+      return
     }
 
-    await dispatch(contactsOperations.post(contactToAdd));
-    await modalHide();
-  };
-  // const reset = () => {
-  //   setName('');
-  //   setNumber('');
-  // };
+    await dispatch(contactsOperations.post(contactToAdd))
+    await modalHide()
+  }
 
   return (
     <Container>
       <StyledPaper elevation={3} className="paper">
         <h2>Contact information:</h2>
-        <form onSubmit={e => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <StyledTextField
             required="true"
             label="Name"
+            name="name"
+            type="text"
             variant="standard"
-            rules={{
-              pattern: /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я ]*)*$/,
-              required: 'Enter name',
-            }}
+            title="The name can only consist of letters, apostrophes, dashes and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan etc."
             color="warning"
             size="small"
             value={name}
-            onChange={handleChange}
-            // onChange={e => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
           <StyledMuiPhoneNumber
-            required
+            required="true"
             label="Phone number"
+            name="number"
+            type="tel"
             variant="standard"
             data-cy="user-phone"
             defaultCountry={'ua'}
             color="warning"
             size="small"
-            title="Must be 3-15 digits only"
+            // title="Must be 3-15 digits only"
             value={number}
-            onChange={handleChange}
-            // onChange={e => setNumber(e.target.value)}
+            onChange={(e) => setNumber(e)}
           />
           <StyledButton
             type="submit"
@@ -115,11 +101,11 @@ const ContactsAddForm = ({ modalHide }) => {
         </form>
       </StyledPaper>
     </Container>
-  );
-};
+  )
+}
 
 ContactsAddForm.propTypes = {
   modalHide: PropTypes.func.isRequired,
-};
+}
 
-export default ContactsAddForm;
+export default ContactsAddForm

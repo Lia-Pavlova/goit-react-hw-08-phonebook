@@ -1,13 +1,13 @@
-import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import styled from '@emotion/styled'
+import { NavLink } from 'react-router-dom'
 
 export const StyledNavLink = styled(NavLink)`
   position: relative;
   display: flex;
-  font-size: 25px;
+  // font-size: 25px;
   font-weight: 600;
-  font-family: Dancing Script;
-  text-shadow: -2px -2px 4px rgba(59, 22, 4, 0.425);
+  font-family: Dancing;
+  text-shadow: -2px -1px 2px rgba(59, 22, 4, 0.425);
 
   color: #fff;
   text-decoration: none;
@@ -24,7 +24,7 @@ export const StyledNavLink = styled(NavLink)`
   &.selected::after {
     transform: translate(-50%, 19px) scaleX(1);
   }
-`;
+`
 
 export const Container = styled.div`
   box-sizing: content-box;
@@ -44,4 +44,4 @@ export const Container = styled.div`
   li:not(:last-of-type) {
     margin-right: 20px;
   }
-`;
+`

@@ -1,5 +1,5 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const settings = {
   position: 'top-center',
@@ -9,87 +9,91 @@ const settings = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-};
+}
 
-const warning = text => {
-  toast.error(text, settings);
-};
+const warning = (text) => {
+  toast.error(text, settings)
+}
 
-const success = text => {
-  toast.success(text, settings);
-};
+const success = (text) => {
+  toast.success(text, settings)
+}
 
-const signUpSuccess = name => {
+const signUpSuccess = (name) => {
   notification.success(
     `The user has been successfully created. Welcome, ${name}!`,
-  );
-};
+  )
+}
 
-const signUpError = errorCode => {
+const signUpError = (errorCode) => {
   if (errorCode === 400) {
-    notification.warning('An account with the specified mail already exists.!');
+    notification.warning('An account with the specified mail already exists.!')
   }
 
   if (errorCode === 500) {
-    notification.warning('There was a problem creating a user. Try again!');
+    notification.warning('There was a problem creating a user. Try again!')
   }
-};
+}
 
-const logInSuccess = name => {
-  notification.success(`Welcome, ${name}!`);
-};
+const logInSuccess = (name) => {
+  notification.success(`Welcome, ${name}!`)
+}
 
-const logInError = errorCode => {
+const logInError = (errorCode) => {
   if (errorCode === 400) {
-    notification.warning('Wrong login or password');
+    notification.warning('Wrong login or password')
   }
-};
+}
 
-const logOutError = errorCode => {
+const logOutError = (errorCode) => {
   if (errorCode === 500) {
-    notification.warning('Logout error, please try again');
+    notification.warning('Logout error, please try again')
   }
-};
+}
 
-const duplicationSuccess = () => {
-  notification.warning('Сontact with this number is already present');
-};
+const duplicationNameSuccess = () => {
+  notification.warning('Сontact with this name is already present')
+}
+
+const duplicationNumberSuccess = () => {
+  notification.warning('Сontact with this number is already present')
+}
 
 const addContactSuccess = () => {
-  notification.success('Сontact added successfully');
-};
+  notification.success('Сontact added successfully')
+}
 
-const addContactError = errorCode => {
+const addContactError = (errorCode) => {
   if (errorCode === 400) {
-    notification.warning('Contact creation error');
+    notification.warning('Contact creation error')
   }
-};
+}
 
-const fetchContactsError = errorCode => {
+const fetchContactsError = (errorCode) => {
   if (errorCode === 500) {
-    notification.warning('Server error. Try again');
+    notification.warning('Server error. Try again')
   }
-};
+}
 
 const deleteContactSuccess = () => {
-  notification.success('Contact removed successfully');
-};
+  notification.success('Contact removed successfully')
+}
 
-const deleteContactError = errorCode => {
+const deleteContactError = (errorCode) => {
   if (errorCode === 500) {
-    notification.warning('Server error. Try again');
+    notification.warning('Server error. Try again')
   }
-};
+}
 
 const updateContactSuccess = () => {
-  notification.success('Сontact updated successfully');
-};
+  notification.success('Сontact updated successfully')
+}
 
-const updateContactError = errorCode => {
+const updateContactError = (errorCode) => {
   if (errorCode === 400) {
-    notification.warning('Contact update error');
+    notification.warning('Contact update error')
   }
-};
+}
 
 const notification = {
   warning,
@@ -99,7 +103,8 @@ const notification = {
   signUpError,
   logInError,
   logOutError,
-  duplicationSuccess,
+  duplicationNameSuccess,
+  duplicationNumberSuccess,
   addContactSuccess,
   addContactError,
   fetchContactsError,
@@ -107,6 +112,6 @@ const notification = {
   deleteContactError,
   updateContactSuccess,
   updateContactError,
-};
+}
 
-export default notification;
+export default notification
