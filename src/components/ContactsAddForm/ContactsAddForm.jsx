@@ -33,9 +33,9 @@ const ContactsAddForm = ({ modalHide }) => {
 
     const contactToAdd = { name, number }
 
-    // if (!contactDataValidationSuccess(contactToAdd)) {
-    //   return
-    // }
+    if (!contactDataValidationSuccess(contactToAdd)) {
+      return
+    }
 
     if (duplicateNameChekingSuccess(contactToAdd, { type: 'add' })) {
       return
@@ -54,7 +54,8 @@ const ContactsAddForm = ({ modalHide }) => {
         <h2>Contact information:</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <StyledTextField
-            required="true"
+            required
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             label="Name"
             name="name"
             type="text"
