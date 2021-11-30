@@ -13,6 +13,7 @@ import {
 import { getLoadingStatus } from '../../redux/contacts/contacts-selectors'
 import * as contactsOperations from '../../redux/contacts/contacts-operations'
 import {
+  contactDataValidationSuccess,
   duplicateNameChekingSuccess,
   duplicateNumberChekingSuccess,
 } from '../../utils/utils'
@@ -28,9 +29,9 @@ const ContactsEditForm = ({ contact, modalHide }) => {
 
     const contactToUpdate = { id: contact.id, name, number }
 
-    // if (!contactDataValidationSuccess(contactToUpdate)) {
-    //   return;
-    // }
+    if (!contactDataValidationSuccess(contactToUpdate, { type: 'edit' })) {
+      return
+    }
     if (duplicateNameChekingSuccess(contactToUpdate, { type: 'edit' })) {
       return
     }
@@ -50,7 +51,10 @@ const ContactsEditForm = ({ contact, modalHide }) => {
         <form onSubmit={(e) => handleSubmit(e)}>
           <StyledTextField
             required
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я ]*)*$"
             label="Name"
+            name="name"
+            type="text"
             variant="standard"
             color="warning"
             size="small"
@@ -60,6 +64,8 @@ const ContactsEditForm = ({ contact, modalHide }) => {
           <StyledTextField
             required
             label="Phone number"
+            name="number"
+            type="tel"
             variant="standard"
             color="warning"
             size="small"
