@@ -1,25 +1,25 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import * as contactsOperations from '../../../redux/contacts/contacts-operations';
-import ContactItem from '../ContactsItem';
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import * as contactsOperations from '../../../redux/contacts/contacts-operations'
+import ContactItem from '../ContactsItem'
 import {
   getFilteredContacts,
   getLoadingStatus,
-} from '../../../redux/contacts/contacts-selectors';
-import StyledList from './ContactsList.styled';
-import { resetContacts } from '../../../redux/contacts/contacts-slice';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+} from '../../../redux/contacts/contacts-selectors'
+import StyledList from './ContactsList.styled'
+import { resetContacts } from '../../../redux/contacts/contacts-slice'
+import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 
 const ContactList = () => {
-  const filteredContacts = useSelector(getFilteredContacts);
-  const isLoading = useSelector(getLoadingStatus);
-  const dispatch = useDispatch();
+  const filteredContacts = useSelector(getFilteredContacts)
+  const isLoading = useSelector(getLoadingStatus)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(contactsOperations.fetch());
-    return () => dispatch(resetContacts());
-  }, [dispatch]);
+    dispatch(contactsOperations.fetch())
+    return () => dispatch(resetContacts())
+  }, [dispatch])
 
   return (
     <>
@@ -36,13 +36,13 @@ const ContactList = () => {
         </Box>
       ) : (
         <StyledList>
-          {filteredContacts.map(contact => (
+          {filteredContacts.map((contact) => (
             <ContactItem key={contact.id} contact={contact} />
           ))}
         </StyledList>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ContactList;
+export default ContactList

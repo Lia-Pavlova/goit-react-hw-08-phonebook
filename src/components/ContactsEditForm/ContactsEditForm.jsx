@@ -34,6 +34,7 @@ const ContactsEditForm = ({ contact, modalHide }) => {
     if (duplicateNameChekingSuccess(contactToUpdate, { type: 'edit' })) {
       return
     }
+
     if (duplicateNumberChekingSuccess(contactToUpdate, { type: 'edit' })) {
       return
     }

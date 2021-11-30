@@ -37,6 +37,7 @@ const LoginForm = () => {
           <StyledTextField
             required
             label="Email"
+            autoComplete="email"
             variant="standard"
             color="warning"
             size="small"

@@ -1,14 +1,14 @@
-import styled from '@emotion/styled';
-import LoadingButton from '@mui/lab/LoadingButton';
-import InputField from '@mui/material/TextField';
-import MuiPhoneNumber from 'material-ui-phone-number';
-import { Paper } from '@mui/material';
+import styled from '@emotion/styled'
+import LoadingButton from '@mui/lab/LoadingButton'
+import InputField from '@mui/material/TextField'
+import MuiPhoneNumber from 'material-ui-phone-number'
+import { Paper } from '@mui/material'
 
 export const Container = styled.div`
   box-sizing: border-box;
   margin: 60px auto;
   width: 340px;
-`;
+`
 
 export const StyledPaper = styled(Paper)`
   padding: 10px;
@@ -30,7 +30,7 @@ export const StyledPaper = styled(Paper)`
 
     padding: 30px;
   }
-`;
+`
 
 export const StyledTextField = styled(InputField)`
   width: 100%;
@@ -38,14 +38,14 @@ export const StyledTextField = styled(InputField)`
   &:not(:first-of-type) {
     margin-top: 12px;
   }
-`;
+`
 export const StyledMuiPhoneNumber = styled(MuiPhoneNumber)`
   width: 100%;
 
   &:not(:first-of-type) {
     margin-top: 12px;
   }
-`;
+`
 
 export const StyledButton = styled(LoadingButton)`
   margin: 30px auto 0;
@@ -74,4 +74,4 @@ export const StyledButton = styled(LoadingButton)`
     background-position: 0px;
     box-shadow: none;
   }
-`;
+`

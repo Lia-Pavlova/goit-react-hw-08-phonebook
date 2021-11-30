@@ -26,12 +26,13 @@ const ContactsAddForm = ({ modalHide }) => {
   const isLoading = useSelector(getLoadingStatus)
   const dispatch = useDispatch()
   const [name, setName] = useState('')
+
   const [number, setNumber] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const contactToAdd = { name, number }
+    const contactToAdd = { number, name }
 
     if (!contactDataValidationSuccess(contactToAdd)) {
       return
@@ -40,6 +41,7 @@ const ContactsAddForm = ({ modalHide }) => {
     if (duplicateNameChekingSuccess(contactToAdd, { type: 'add' })) {
       return
     }
+
     if (duplicateNumberChekingSuccess(contactToAdd, { type: 'add' })) {
       return
     }
@@ -54,20 +56,23 @@ const ContactsAddForm = ({ modalHide }) => {
         <h2>Contact information:</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <StyledTextField
-            required
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            required="The name must consist only in letters"
+            autoComplete="off"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я ]*)*$"
             label="Name"
             name="name"
             type="text"
             variant="standard"
-            title="The name can only consist of letters, apostrophes, dashes and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan etc."
+            title="Can only consist of letters, apostrophes, dashes and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan etc."
             color="warning"
             size="small"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+
           <StyledMuiPhoneNumber
             required="true"
+            autoComplete="off"
             label="Phone number"
             name="number"
             type="tel"
@@ -80,6 +85,7 @@ const ContactsAddForm = ({ modalHide }) => {
             value={number}
             onChange={(e) => setNumber(e)}
           />
+
           <StyledButton
             type="submit"
             loading={isLoading}

@@ -16,7 +16,7 @@ import {
 } from './RegisterForm.styled'
 import * as authOperations from '../../redux/auth/auth-operations'
 import { getLoadingStatus } from '../../redux/auth/auth-selectors'
-import { registrationDataValidationSuccess } from '../../utils/utils'
+// import { registrationDataValidationSuccess } from '../../utils/utils'
 
 const RegisterForm = () => {
   const isLoading = useSelector(getLoadingStatus)
