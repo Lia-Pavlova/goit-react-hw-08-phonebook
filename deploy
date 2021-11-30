@@ -1,0 +1,96 @@
+Script started on Wed Dec  1 00:34:40 2021
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ npm s[K[K run deploy
+
+> goit-react-hw-08-phonebook@0.1.0 predeploy /Users/Li/Documents/GitHub/goit-react-hw-08-phonebook
+> npm run build
+
+
+> goit-react-hw-08-phonebook@0.1.0 build /Users/Li/Documents/GitHub/goit-react-hw-08-phonebook
+> react-scripts build
+
+Creating an optimized production build...
+.[33mCompiled with warnings.[39m
+[33m[39m
+src/components/FilterBar/FilterBar.jsx
+  [1mLine 11:10:[22m  'IconButton' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/views/ContactsView/ContactsView.jsx
+  [1mLine 1:10:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+File sizes after gzip:
+
+  120.92 KB ([33m+2 B[39m)  [2mbuild/static/js/[22m[36m7.7bab78d9.chunk.js[39m
+  87.47 KB ([33m+5 B[39m)   [2mbuild/static/js/[22m[36m8.4c6c97f7.chunk.js[39m
+  12.91 KB ([32m-2 B[39m)   [2mbuild/static/js/[22m[36m0.120d8189.chunk.js[39m
+  5.51 KB           [2mbuild/static/js/[22m[36mmain.b0aaa830.chunk.js[39m
+  3.45 KB           [2mbuild/static/js/[22m[36m404-page.46867d61.chunk.js[39m
+  3.35 KB ([32m-2 B[39m)    [2mbuild/static/js/[22m[36mcontacts-page.ebf1dfac.chunk.js[39m
+  2.64 KB           [2mbuild/static/css/[22m[36m7.f4c56af9.chunk.css[39m
+  2.26 KB ([32m-1 B[39m)    [2mbuild/static/js/[22m[36mregister-page.f8d3d25c.chunk.js[39m
+  1.93 KB ([33m+5 B[39m)    [2mbuild/static/js/[22m[36mlogin-page.a734803a.chunk.js[39m
+  1.59 KB ([33m+1 B[39m)    [2mbuild/static/js/[22m[36mruntime-main.e26b5fe4.js[39m
+  466 B             [2mbuild/static/css/[22m[36mmain.9e939488.chunk.css[39m
+  349 B             [2mbuild/static/css/[22m[36mcontacts-page.cbf557d6.chunk.css[39m
+
+The project was built assuming it is hosted at [32m/[39m.
+You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+
+The [36mbuild[39m folder is ready to be deployed.
+You may serve it with a static server:
+
+  [36mnpm[39m install -g serve
+  [36mserve[39m -s build
+
+Find out more about deployment here:
+
+  [33mhttps://cra.link/deployment[39m
+
+
+> goit-react-hw-08-phonebook@0.1.0 deploy /Users/Li/Documents/GitHub/goit-react-hw-08-phonebook
+> netlify deploy -p
+
+[32mDeploy path: [39m       /Users/Li/Documents/GitHub/goit-react-hw-08-phonebook/build
+[32mConfiguration path: [39m/Users/Li/Documents/GitHub/goit-react-hw-08-phonebook/netlify.toml
+Deploying to main site URL...
+[?25l[36m⠋[39m Hashing files...[2K[1G[36m⠙[39m Hashing static/js/contacts-page.ebf1dfac.chunk.js[2K[1G[?25h[32m✔[39m Finished hashing 34 files
+[?25l[36m⠋[39m CDN diffing files...[2K[1G[36m⠙[39m CDN diffing files...[2K[1G[36m⠹[39m CDN diffing files...[2K[1G[36m⠸[39m CDN diffing files...[2K[1G[36m⠼[39m CDN diffing files...[2K[1G[36m⠴[39m CDN diffing files...[2K[1G[36m⠦[39m CDN diffing files...[2K[1G[?25h[32m✔[39m CDN requesting 19 files
+[?25l[36m⠋[39m Uploading 19 files[2K[1G[36m⠙[39m (4/19) Uploading static/js/main.b0aaa830.chunk.js.map...[2K[1G[36m⠹[39m (4/19) Uploading static/js/main.b0aaa830.chunk.js.map...[2K[1G[36m⠸[39m (4/19) Uploading static/js/main.b0aaa830.chunk.js.map...[2K[1G[36m⠼[39m (4/19) Uploading static/js/main.b0aaa830.chunk.js.map...[2K[1G[36m⠴[39m (4/19) Uploading static/js/main.b0aaa830.chunk.js.map...[2K[1G[36m⠦[39m (7/19) Uploading static/js/login-page.a734803a.chunk.js...[2K[1G[36m⠧[39m (8/19) Uploading static/js/contacts-page.ebf1dfac.chunk.js.map...[2K[1G[36m⠇[39m (9/19) Uploading static/js/contacts-page.ebf1dfac.chunk.js...[2K[1G[36m⠏[39m (9/19) Uploading static/js/contacts-page.ebf1dfac.chunk.js...[2K[1G[36m⠋[39m (9/19) Uploading static/js/contacts-page.ebf1dfac.chunk.js...[2K[1G[36m⠙[39m (10/19) Uploading static/js/8.4c6c97f7.chunk.js.map...[2K[1G[36m⠹[39m (11/19) Uploading static/js/8.4c6c97f7.chunk.js...[2K[1G[36m⠸[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠼[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠴[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠦[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠧[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠇[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠏[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠋[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠙[39m (14/19) Uploading static/js/0.120d8189.chunk.js.map...[2K[1G[36m⠹[39m (15/19) Uploading static/js/0.120d8189.chunk.js...[2K[1G[36m⠸[39m (16/19) Uploading index.html...[2K[1G[36m⠼[39m (17/19) Uploading favicon.ico...[2K[1G[36m⠴[39m (17/19) Uploading favicon.ico...[2K[1G[36m⠦[39m (18/19) Uploading asset-manifest.json...[2K[1G[36m⠧[39m (18/19) Uploading asset-manifest.json...[2K[1G[36m⠇[39m (18/19) Uploading asset-manifest.json...[2K[1G[36m⠏[39m (18/19) Uploading asset-manifest.json...[2K[1G[36m⠋[39m (18/19) Uploading asset-manifest.json...[2K[1G[?25h[32m✔[39m Finished uploading 19 assets
+[?25l[36m⠋[39m Waiting for deploy to go live...[2K[1G[36m⠙[39m Waiting for deploy to go live...[2K[1G[36m⠹[39m Waiting for deploy to go live...[2K[1G[36m⠸[39m Waiting for deploy to go live...[2K[1G[36m⠼[39m Waiting for deploy to go live...[2K[1G[36m⠴[39m Waiting for deploy to go live...[2K[1G[36m⠦[39m Waiting for deploy to go live...[2K[1G[36m⠧[39m Waiting for deploy to go live...[2K[1G[36m⠇[39m Waiting for deploy to go live...[2K[1G[36m⠏[39m Waiting for deploy to go live...[2K[1G[36m⠋[39m Waiting for deploy to go live...[2K[1G[36m⠙[39m Waiting for deploy to go live...[2K[1G[36m⠹[39m Waiting for deploy to go live...[2K[1G[36m⠸[39m Waiting for deploy to go live...[2K[1G[36m⠼[39m Waiting for deploy to go live...[2K[1G[36m⠴[39m Waiting for deploy to go live...[2K[1G[36m⠦[39m Waiting for deploy to go live...[2K[1G[36m⠧[39m Waiting for deploy to go live...[2K[1G[36m⠇[39m Waiting for deploy to go live...[2K[1G[36m⠏[39m Waiting for deploy to go live...[2K[1G[36m⠋[39m Waiting for deploy to go live...[2K[1G[36m⠙[39m Waiting for deploy to go live...[2K[1G[36m⠹[39m Waiting for deploy to go live...[2K[1G[36m⠸[39m Waiting for deploy to go live...[2K[1G[?25h[32m✔[39m Deploy is live!
+
+[32mLogs: [39m             https://app.netlify.com/sites/lia-phone-book/deploys/61a6a72f47ff3d31a9fcaba3
+[32mUnique Deploy URL: [39mhttps://61a6a72f47ff3d31a9fcaba3--lia-phone-book.netlify.app
+[32mWebsite URL: [39m      https://lia-phone-book.netlify.app
+[?25hbash-3.2$ .npm start
+bash: .npm: command not found
+bash-3.2$ 
+bash-3.2$ npm start
+
+> goit-react-hw-08-phonebook@0.1.0 start /Users/Li/Documents/GitHub/goit-react-hw-08-phonebook
+> react-scripts start
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://192.168.1.202/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /Users/Li/Documents/GitHub/goit-react-hw-08-phonebook/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+src/components/FilterBar/FilterBar.jsx
+  [1mLine 11:10:[22m  'IconButton' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/views/ContactsView/ContactsView.jsx
+  [1mLine 1:10:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+^C
+bash-3.2$ 

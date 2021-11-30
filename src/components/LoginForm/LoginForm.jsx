@@ -38,6 +38,7 @@ const LoginForm = () => {
             required
             label="Email"
             autoComplete="email"
+            autoFocus
             variant="standard"
             color="warning"
             size="small"
