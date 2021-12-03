@@ -1,10 +1,10 @@
-import { Box, Typography } from '@mui/material';
-import noContactsGif from '../../images/travolta.gif';
+import { Box, Typography } from '@mui/material'
+import noContactsGif from '../../images/travolta.gif'
 
 export default function NoContactsView({ message }) {
   return (
-    <Box sx={{ ml: 'auto', mr: 'auto', textAlign: 'center' }}>
-      <Typography component="p" variant="h6" align="center">
+    <Box sx={{ ml: '30%', mr: '30%', textAlign: 'center', color: '#f3a15d' }}>
+      <Typography component="p" variant="h5" align="center">
         {message}
       </Typography>
       <img
@@ -13,5 +13,5 @@ export default function NoContactsView({ message }) {
         style={{ maxWidth: '300px' }}
       />
     </Box>
-  );
+  )
 }

@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
-
+import 'react-phone-number-input/style.css'
 import s from '../ContactsEditForm/CancelBtnStyle.module.css'
 import {
   Container,
@@ -60,23 +61,10 @@ const ContactsAddForm = ({ modalHide }) => {
     await modalHide()
   }
 
-  //  const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   if (
-  //     items.find(
-  //       (contact) =>
-  //         contact.name.toLowerCase() === name.toLowerCase() &&
-  //         contact.id !== contactIsEditing.id
-  //     )
-  //   ) {
-  //     return toast.error(`${name} already exist`);
-  //   }
-
   return (
     <Container>
       <StyledPaper elevation={3} className="paper">
-        <h2>Contact information:</h2>
+        <h2>Add the information:</h2>
         <form onSubmit={handleSubmit}>
           <StyledTextField
             required="The name must consist only in letters"
@@ -102,6 +90,8 @@ const ContactsAddForm = ({ modalHide }) => {
             variant="standard"
             data-cy="user-phone"
             defaultCountry={'ua'}
+            preferredCountries={['ua', 'ru']}
+            enableSearch={true}
             color="warning"
             size="small"
             // title="Must be 3-15 digits only"

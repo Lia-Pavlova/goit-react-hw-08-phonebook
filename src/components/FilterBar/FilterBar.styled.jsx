@@ -1,5 +1,5 @@
-import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import { styled, alpha } from '@mui/material/styles'
+import InputBase from '@mui/material/InputBase'
 
 export const Filter = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -27,7 +27,7 @@ export const Filter = styled('div')(({ theme }) => ({
     left: '35%',
     transform: 'translate(-50%, -50%)',
   },
-}));
+}))
 
 export const FilterIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -37,7 +37,7 @@ export const FilterIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-}));
+}))
 
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
@@ -48,11 +48,11 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     color: '#524240',
-    [theme.breakpoints.up('md')]: {
-      width: '0.1ch',
-      '&:focus': {
-        width: '25ch',
-      },
-    },
+    // [theme.breakpoints.up('md')]: {
+    //   width: '0.1ch',
+    //   '&:focus': {
+    //     width: '25ch',
+    //   },
+    // },
   },
-}));
+}))

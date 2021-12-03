@@ -11,18 +11,15 @@ export const StyledNavLink = styled(NavLink)`
 
   color: #fff;
   text-decoration: none;
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    display: block;
-    width: 100%;
-    transform: translate(-50%, 19px) scaleX(0);
-    border: 1.5px solid #fff;
+
+  &:hover {
+    transform: scale(1.2);
   }
-  &.selected::after {
-    transform: translate(-50%, 19px) scaleX(1);
+
+  &.selected {
+    color: #ea2a2abb;
+    text-shadow: none;
+    transform: scale(1.1);
   }
 `
 

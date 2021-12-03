@@ -1,18 +1,25 @@
-import { useSelector } from 'react-redux';
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
-import defaultUserLogo from './default-logo-w500.png';
-import { StyledCardContent, ImageThumb } from './UserCard.styled';
-import { getUserName, getUserEmail } from '../../redux/auth/auth-selectors';
+import { useSelector } from 'react-redux'
+import Card from '@mui/material/Card'
+import Typography from '@mui/material/Typography'
+import defaultUserLogo from '../../images/avatar.png'
+
+import { StyledCardContent, ImageThumb } from './UserCard.styled'
+import { getUserName, getUserEmail } from '../../redux/auth/auth-selectors'
 
 const BasicCard = () => {
-  const name = useSelector(getUserName);
-  const email = useSelector(getUserEmail);
+  const name = useSelector(getUserName)
+  const email = useSelector(getUserEmail)
 
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ width: 275, height: 275 }}>
       <StyledCardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography
+          sx={{
+            fontSize: 20,
+          }}
+          color="text.secondary"
+          gutterBottom
+        >
           User profile
         </Typography>
         <ImageThumb>
@@ -26,7 +33,7 @@ const BasicCard = () => {
         </Typography>
       </StyledCardContent>
     </Card>
-  );
-};
+  )
+}
 
-export default BasicCard;
+export default BasicCard

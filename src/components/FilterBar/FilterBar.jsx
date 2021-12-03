@@ -1,14 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux'
+
+// import { alpha, styled } from '@mui/material/styles'
+// import useMediaQuery from '@mui/material/useMediaQuery'
 import SearchIcon from '@mui/icons-material/Search'
-import { Filter, FilterIconWrapper, StyledInputBase } from './FilterBar.styled'
+
+// import ClearIcon from '@mui/icons-material/Clear'
+// import { IconButton } from '@mui/material'
+
+// import { theme } from '../../../src/common/theme'
 import { getFilter } from '../../redux/contacts/contacts-selectors'
 import { changeFilter } from '../../redux/contacts/contacts-slice'
-// import { changeFilter } from '../../redux/contacts/contacts-action'
-// import { theme } from '../../../src/common/theme'
-// import ClearIcon from '@mui/icons-material/Clear'
-// import useMediaQuery from '@mui/material/useMediaQuery'
-// import { alpha, styled } from '@mui/material/styles'
-import { IconButton } from '@mui/material'
+
+import { Filter, FilterIconWrapper, StyledInputBase } from './FilterBar.styled'
 
 // const SearchContactByName = styled('div')(({ theme }) => ({
 //   position: 'absolute',
@@ -18,7 +21,7 @@ import { IconButton } from '@mui/material'
 //     backgroundColor: alpha(theme.palette.common.white, 0.25),
 //   },
 //   marginLeft: 0,
-//   width: '100%',
+//   width: '85%',
 //   // [theme.breakpoints.up('sm')]: {
 //   //   marginLeft: theme.spacing(1),
 //   //   width: 'auto',
@@ -47,7 +50,7 @@ const FilterBar = () => {
   // }
   // const onClearBtnClick = () => {
   //   dispatch(changeFilter(''))
-  //   //   showAddContactBtn(true)
+  //   // showAddContactBtn(true)
   // }
 
   return (
@@ -67,7 +70,7 @@ const FilterBar = () => {
       />
       {/* {searchContactInputIsFilled && (
           <IconButton aria-label="clear" onClick={onClearBtnClick}>
-            <ClearIcon />
+            <ClearIcon style={{ color: '#fff', fontSize: 'small' }} />
           </IconButton>
         )} */}
     </Filter>

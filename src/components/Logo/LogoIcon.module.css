@@ -1,0 +1,17 @@
+.logoIcon {
+  display: block;
+  align-self: center;
+  margin-right: 8px;
+  border-radius: 10px;
+  /* box-shadow: 4px 4px 6px rgba(59, 22, 4, 0.425); */
+  background: repeating-linear-gradient(
+    90deg,
+    #e9ce367a 00%,
+    #f3a15d 10%,
+    #ea2a2abb 15%,
+    #f3a15d 70%,
+    #e9ce367a 100%
+  );
+
+  /* text-shadow: -4px -4px 0px #fff; */
+}

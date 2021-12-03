@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .container {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
-  font-family: 'Dancing';
+  font-family: Dancing, cursive;
+  letter-spacing: 0.4rem;
+  color: #fff;
+  text-shadow: -2px -1px 2px rgb(59, 22, 4, 0.425);
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
   /* margin-right: -50px; */
-  /* width: 100%; */
   /* margin-top: -15px; */
   /* margin-right: 50px; */
   /* padding: 0px; */
-  color: #fff;
   /* text-shadow: -4px -3px 5px rgba(59, 22, 4, 0.425); */
-  font-weight: 600;
-  text-shadow: -2px -1px 2px rgb(59, 22, 4, 0.425);
-  font-size: 20px;
 }

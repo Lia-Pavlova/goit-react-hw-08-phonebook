@@ -15,3 +15,5 @@ export const getFilteredContacts = createSelector(
     )
   },
 )
+
+// export const contactToEdit = (state) => state.contacts.contactToEdit

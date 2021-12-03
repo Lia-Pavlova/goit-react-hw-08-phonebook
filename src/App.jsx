@@ -1,42 +1,51 @@
-import { useEffect, lazy, Suspense } from 'react';
-import { Switch, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
-import LinearProgress from '@mui/material/LinearProgress';
-import Box from '@mui/material/Box';
-import * as authOperations from './redux/auth/auth-operations';
-import ApplicationBar from './components/ApplicationBar';
-import Container from './App.styled';
-import PrivateRoute from './components/PrivateRoute';
-import PublicRoute from './components/PublicRoute';
-import { getLoadingStatus } from './redux/auth/auth-selectors';
-// import Clock from './components/Clock/Clock';
+import { useEffect, lazy, Suspense } from 'react'
+import { Switch, Redirect } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
+import LinearProgress from '@mui/material/LinearProgress'
+import Box from '@mui/material/Box'
+import * as authOperations from './redux/auth/auth-operations'
+import ApplicationBar from './components/ApplicationBar'
+import Container from './App.styled'
+import PrivateRoute from './components/PrivateRoute'
+import PublicRoute from './components/PublicRoute'
+import { getLoadingStatus } from './redux/auth/auth-selectors'
 
+const HomePage = lazy(() =>
+  import('./views/HomePage/HomePage' /* webpackChunkName: "home-page" */),
+)
 const AsyncLoginView = lazy(() =>
-  import('./views/LoginView' /* webpackChunkName: "login-page" */),
-);
+  import('./views/LoginPage' /* webpackChunkName: "login-page" */),
+)
 const AsyncRegisterView = lazy(() =>
-  import('./views/RegisterView' /* webpackChunkName: "register-page" */),
-);
+  import('./views/RegisterPage' /* webpackChunkName: "register-page" */),
+)
 const AsyncContactsView = lazy(() =>
-  import('./views/ContactsView' /* webpackChunkName: "contacts-page" */),
-);
+  import(
+    './views/ContactsPage/ContactsPage' /* webpackChunkName: "contacts-page" */
+  ),
+)
+const ContactsPage = lazy(() =>
+  import(
+    './views/ContactsPage/ContactsPage' /* webpackChunkName: "contacts-page" */
+  ),
+)
 const AsyncPageErrorView = lazy(() =>
   import('./views/PageErrorView' /* webpackChunkName: "404-page" */),
-);
+)
 
 const App = () => {
-  const isUserDataLoading = useSelector(getLoadingStatus);
-  const dispatch = useDispatch();
+  const isUserDataLoading = useSelector(getLoadingStatus)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(authOperations.refresh());
-  }, [dispatch]);
+    dispatch(authOperations.refresh())
+  }, [dispatch])
 
   return (
     <>
       <ApplicationBar />
-      {/* <Clock /> */}
+
       <ToastContainer
         autoClose={2500}
         position="top-center"
@@ -52,6 +61,13 @@ const App = () => {
           }
         >
           <Switch>
+            <PublicRoute path="/" redirectTo="/contacts" restricted exact>
+              <HomePage />
+            </PublicRoute>
+            <PrivateRoute path="/contacts" exact>
+              <ContactsPage />
+            </PrivateRoute>
+
             <PublicRoute path="/" exact restricted>
               <Redirect to="/login" />
             </PublicRoute>
@@ -71,7 +87,7 @@ const App = () => {
         </Suspense>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

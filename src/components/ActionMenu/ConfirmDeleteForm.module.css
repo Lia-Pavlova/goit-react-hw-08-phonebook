@@ -1,0 +1,46 @@
+.deleteBtn {
+  margin: 20px 5px;
+  border-radius: 3em;
+  color: rgb(83, 67, 65);
+  background: linear-gradient(
+    to right,
+    #f3a15d 0%,
+    #ea2a2abb 50%,
+    #f3a15d 100%
+  );
+  background-size: 200%;
+  background-position: 100%;
+  color: #524240;
+  transition: all 0.7s;
+}
+.deleteBtn:hover {
+  background: linear-gradient(to right, #fcca88 0%, #ea2a2a 50%, #fcca88 100%);
+  background-size: 200%;
+  background-position: 0px;
+  box-shadow: none;
+}
+
+.cancelBtn {
+  margin: 20px 5px;
+  border-radius: 3em;
+  background: linear-gradient(
+    to right,
+    #e9ce367a 0%,
+    #f7b705 50%,
+    #e9ce367a 100%
+  );
+  background-size: 200%;
+  background-position: 100%;
+  transition: all 0.7s;
+}
+.cancelBtn:hover {
+  background: linear-gradient(
+    to right,
+    #e9ce367a 0%,
+    #f7b705 50%,
+    #e9ce367a 100%
+  );
+  background-size: 200%;
+  background-position: 0px;
+  box-shadow: none;
+}

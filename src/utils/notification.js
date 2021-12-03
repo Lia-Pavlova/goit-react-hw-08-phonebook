@@ -1,10 +1,12 @@
+// import { ClassNames } from '@emotion/react'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+// import s from './notification.module.css'
 
 const settings = {
   position: 'top-center',
   autoClose: 3000,
-  hideProgressBar: false,
+  // hideProgressBar: true,
   closeOnClick: true,
   pauseOnHover: true,
   draggable: true,

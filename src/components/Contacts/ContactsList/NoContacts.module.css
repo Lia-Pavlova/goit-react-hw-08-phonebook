@@ -1,0 +1,71 @@
+.noContactsImg {
+  margin: 50px auto;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  margin: 30px auto;
+  font-family: Dancing, cursive;
+  /* width: 320px; */
+
+  font-size: 40px;
+  letter-spacing: 0.3rem;
+  display: flex;
+  align-items: center;
+  color: #f1c8a6;
+  background: repeating-linear-gradient(
+    -5deg,
+    #e9ce367a 0%,
+    #f3a15d 30%,
+    #ea2a2abb 50%,
+    #f3a15d 70%,
+    #e9ce367a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: -1px -8px 0px rgb(223, 215, 215);
+
+  justify-content: center;
+}
+
+.info {
+  margin: 30px auto;
+  font-family: Dancing, cursive;
+  /* width: 320px; */
+  font-size: 40px;
+  letter-spacing: 0.1rem;
+  display: flex;
+  align-items: center;
+  color: #fce2cd;
+  justify-content: center;
+}
+
+.appear {
+  opacity: 0;
+}
+
+.appearActive {
+  opacity: 1;
+  transition: all 500ms linear;
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: all 250ms linear;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transition: all 250ms linear;
+}

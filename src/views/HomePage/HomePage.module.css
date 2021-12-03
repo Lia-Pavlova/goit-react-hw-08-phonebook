@@ -1,0 +1,53 @@
+.HomePage {
+  display: flex;
+  /* height: 100hv; */
+  align-items: center;
+  padding: 60px 0 200px;
+}
+
+.HomePage__titles {
+  flex: 0 0 60%;
+}
+
+.HomePage__imgWrap {
+  flex: 0 45%;
+}
+
+.HomePage__title {
+  /* padding-left: 10px; */
+  font-size: 30x;
+  font-family: Dancing Script;
+  font-weight: 700;
+
+  background: repeating-linear-gradient(
+    -5deg,
+    #e9ce367a 0%,
+    #f3a15d 30%,
+    #ea2a2abb 50%,
+    #f3a15d 70%,
+    #e9ce367a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: -4px -4px 0px #e5f8e9;
+
+  text-align: left;
+  line-height: 1.4;
+  letter-spacing: 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .HomePage__title {
+    font-size: 50px;
+  }
+}
+
+.HomePage__image {
+  width: 350px;
+  margin-left: auto;
+}
+
+.HomePage__imgPhonebook {
+  padding-left: 25%;
+}

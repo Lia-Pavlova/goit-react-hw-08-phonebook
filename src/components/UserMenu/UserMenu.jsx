@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
-import Menu from '@mui/material/Menu';
-import IconButton from '@mui/material/IconButton';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import BasicCard from '../UserCard';
-import { StyledMenuItem } from './UserMenu.styled';
+import PropTypes from 'prop-types'
+import Menu from '@mui/material/Menu'
+import IconButton from '@mui/material/IconButton'
+import AccountCircle from '@mui/icons-material/AccountCircle'
+import ExitToAppIcon from '@mui/icons-material/ExitToApp'
+import BasicCard from '../UserCard'
+import { StyledMenuItem } from './UserMenu.styled'
 
 const UserMenu = ({ handleMenu, anchorEl, handleClose, handleLogout }) => {
   return (
@@ -41,14 +41,14 @@ const UserMenu = ({ handleMenu, anchorEl, handleClose, handleLogout }) => {
         </StyledMenuItem>
       </Menu>
     </>
-  );
-};
+  )
+}
 
 UserMenu.propTypes = {
   handleMenu: PropTypes.func.isRequired,
   anchorEl: PropTypes.any,
   handleClose: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,
-};
+}
 
-export default UserMenu;
+export default UserMenu

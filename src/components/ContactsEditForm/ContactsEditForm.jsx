@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import SaveIcon from '@mui/icons-material/Save'
@@ -26,7 +27,6 @@ const ContactsEditForm = ({ contact, modalHide }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
     const contactToUpdate = { id: contact.id, name, number }
 
     if (!contactDataValidationSuccess(contactToUpdate, { type: 'edit' })) {
@@ -47,7 +47,7 @@ const ContactsEditForm = ({ contact, modalHide }) => {
   return (
     <Container>
       <StyledPaper elevation={3} className="paper">
-        <h2>Contact information:</h2>
+        <h2>Edit the information:</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <StyledTextField
             required
